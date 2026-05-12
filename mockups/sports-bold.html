@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이음네트웍스글로벌 — Sports Bold 시안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Pretendard Variable','Pretendard',system-ui,sans-serif; background:#0a0a0a; color:#fff; }
+
+/* ── Variables ── */
+:root {
+  --black: #0a0a0a;
+  --black-light: #141414;
+  --black-card: #1a1a1a;
+  --coral: #E8563A;
+  --coral-light: #FF6B4A;
+  --coral-dark: #C7432A;
+  --white-90: rgba(255,255,255,.9);
+  --white-70: rgba(255,255,255,.7);
+  --white-50: rgba(255,255,255,.5);
+  --white-30: rgba(255,255,255,.3);
+  --white-10: rgba(255,255,255,.1);
+  --white-05: rgba(255,255,255,.05);
+}
+
+/* ── Utilities ── */
+.container { max-width:1200px; margin:0 auto; padding:0 24px; }
+.section { padding:100px 0; }
+.section-label { font-size:13px; font-weight:600; color:var(--coral); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; }
+.section-title { font-size:36px; font-weight:800; line-height:1.3; margin-bottom:16px; }
+.section-desc { font-size:16px; color:var(--white-50); line-height:1.7; max-width:560px; }
+.grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.btn-coral { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; background:var(--coral); color:#fff; border:none; border-radius:8px; font-size:15px; font-weight:600; cursor:pointer; transition:background .2s; text-decoration:none; }
+.btn-coral:hover { background:var(--coral-light); }
+.btn-outline { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; background:transparent; color:#fff; border:1px solid var(--white-30); border-radius:8px; font-size:15px; font-weight:600; cursor:pointer; transition:all .2s; text-decoration:none; }
+.btn-outline:hover { border-color:var(--coral); color:var(--coral); }
+
+/* ── Page Nav (sticky) ── */
+.page-nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,10,10,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--white-05); }
+.page-nav-inner { display:flex; justify-content:center; gap:4px; padding:8px; }
+.page-nav a { padding:10px 20px; border-radius:8px; font-size:13px; font-weight:600; color:var(--white-50); text-decoration:none; transition:all .2s; }
+.page-nav a:hover, .page-nav a.active { color:#fff; background:var(--white-05); }
+
+/* ── Section dividers ── */
+.divider { height:1px; background:var(--white-10); margin:0; }
+
+/* ═══════════════════════
+   HEADER
+   ═══════════════════════ */
+.header { padding:20px 0; border-bottom:1px solid var(--white-05); margin-top:52px; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; }
+.logo { font-size:20px; font-weight:800; letter-spacing:-0.5px; }
+.logo span { color:var(--coral); }
+.nav { display:flex; gap:32px; }
+.nav a { font-size:14px; font-weight:500; color:var(--white-50); text-decoration:none; transition:color .2s; }
+.nav a:hover { color:#fff; }
+
+/* ═══════════════════════
+   HERO
+   ═══════════════════════ */
+.hero { padding:80px 0 60px; position:relative; }
+.hero::after { content:''; position:absolute; right:0; top:0; bottom:0; width:40%; background:linear-gradient(135deg, transparent 0%, rgba(232,86,58,.03) 100%); pointer-events:none; }
+.hero-badge { display:inline-block; padding:6px 16px; background:var(--coral); color:#fff; font-size:12px; font-weight:700; border-radius:4px; margin-bottom:24px; letter-spacing:1px; }
+.hero h1 { font-size:48px; font-weight:900; line-height:1.25; margin-bottom:20px; letter-spacing:-1px; }
+.hero p { font-size:17px; color:var(--white-50); line-height:1.7; max-width:600px; margin-bottom:40px; }
+
+/* Stats strip */
+.stats-strip { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--white-10); padding-top:40px; margin-top:20px; }
+.stat-item { text-align:left; }
+.stat-num { font-size:40px; font-weight:800; color:#fff; line-height:1; }
+.stat-num .accent { color:var(--coral); }
+.stat-label { font-size:13px; color:var(--white-30); margin-top:8px; }
+
+/* ═══════════════════════
+   ABOUT SECTION
+   ═══════════════════════ */
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.about-visual { background:var(--black-card); border-radius:16px; padding:48px; text-align:center; border:1px solid var(--white-05); }
+.about-visual .big-quote { font-size:80px; color:var(--coral); opacity:.3; line-height:1; }
+.about-visual .quote-text { font-size:20px; font-weight:600; margin-top:16px; line-height:1.6; }
+.about-visual .quote-author { font-size:14px; color:var(--white-30); margin-top:16px; }
+.value-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px; }
+.value-card { background:var(--black-card); border:1px solid var(--white-05); border-radius:12px; padding:24px; }
+.value-card .v-icon { font-size:24px; margin-bottom:12px; }
+.value-card h4 { font-size:15px; font-weight:700; margin-bottom:6px; }
+.value-card p { font-size:13px; color:var(--white-40); line-height:1.6; }
+.timeline { margin-top:40px; }
+.timeline-item { display:flex; gap:20px; padding:16px 0; border-bottom:1px solid var(--white-05); }
+.timeline-year { font-size:14px; font-weight:700; color:var(--coral); min-width:60px; }
+.timeline-text { font-size:14px; color:var(--white-50); }
+
+/* ═══════════════════════
+   BUSINESS SECTION
+   ═══════════════════════ */
+.biz-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:48px; }
+.biz-card { background:var(--black-card); border:1px solid var(--white-05); border-radius:16px; padding:36px; position:relative; overflow:hidden; transition:all .3s; }
+.biz-card:hover { border-color:var(--coral); transform:translateY(-2px); }
+.biz-card::before { content:''; position:absolute; top:0; right:0; width:120px; height:120px; background:radial-gradient(circle, rgba(232,86,58,.06) 0%, transparent 70%); }
+.biz-card .biz-num { font-size:64px; font-weight:900; color:var(--white-05); position:absolute; top:16px; right:24px; line-height:1; }
+.biz-card .biz-icon { font-size:32px; margin-bottom:16px; }
+.biz-card h3 { font-size:20px; font-weight:700; margin-bottom:8px; }
+.biz-card .biz-sub { font-size:13px; color:var(--coral); font-weight:600; margin-bottom:12px; }
+.biz-card p { font-size:14px; color:var(--white-40); line-height:1.7; }
+.biz-card .biz-tags { display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; }
+.biz-card .biz-tag { padding:4px 12px; background:var(--white-05); border-radius:20px; font-size:11px; color:var(--white-50); }
+.biz-card.featured { grid-column:span 2; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; background:linear-gradient(135deg, var(--black-card) 0%, rgba(232,86,58,.05) 100%); }
+.biz-card.featured .biz-visual { background:var(--white-05); border-radius:12px; padding:40px; text-align:center; font-size:48px; }
+
+/* ═══════════════════════
+   GROUP / SUBSIDIARIES
+   ═══════════════════════ */
+.group-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+.group-card { background:var(--black-card); border:1px solid var(--white-05); border-radius:16px; padding:32px; text-align:center; transition:all .3s; }
+.group-card:hover { border-color:var(--coral); }
+.group-card .g-logo { width:72px; height:72px; border-radius:16px; background:var(--white-05); display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:12px; color:var(--white-30); font-weight:700; line-height:1.3; }
+.group-card h3 { font-size:18px; font-weight:700; margin-bottom:4px; }
+.group-card .g-en { font-size:12px; color:var(--white-30); margin-bottom:12px; }
+.group-card p { font-size:13px; color:var(--white-40); line-height:1.6; margin-bottom:16px; }
+.group-card .g-link { font-size:13px; color:var(--coral); font-weight:600; text-decoration:none; }
+.group-card .g-link:hover { text-decoration:underline; }
+
+/* Structure diagram */
+.org-diagram { margin-top:60px; text-align:center; }
+.org-center { display:inline-flex; flex-direction:column; align-items:center; gap:4px; padding:20px 40px; background:var(--coral); border-radius:12px; font-weight:700; }
+.org-center small { font-size:11px; opacity:.8; }
+.org-branches { display:flex; justify-content:center; gap:60px; margin-top:24px; position:relative; }
+.org-branches::before { content:''; position:absolute; top:-24px; left:50%; width:1px; height:24px; background:var(--white-10); }
+.org-branch { display:flex; flex-direction:column; align-items:center; gap:4px; padding:16px 32px; border:1px solid var(--white-10); border-radius:10px; font-size:14px; font-weight:600; position:relative; }
+.org-branch::before { content:''; position:absolute; top:-24px; left:50%; width:1px; height:24px; background:var(--white-10); }
+.org-branch small { font-size:11px; color:var(--white-30); font-weight:400; }
+.org-line { display:flex; justify-content:center; margin-top:0; }
+.org-line-h { width:360px; height:1px; background:var(--white-10); margin-top:0; }
+
+/* ═══════════════════════
+   CONTACT SECTION
+   ═══════════════════════ */
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:48px; }
+.contact-form { display:flex; flex-direction:column; gap:16px; }
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-group label { font-size:13px; font-weight:600; color:var(--white-50); }
+.form-group input, .form-group textarea, .form-group select {
+  background:var(--black-card); border:1px solid var(--white-10); border-radius:8px;
+  padding:14px 16px; color:#fff; font-size:14px; font-family:inherit; outline:none;
+  transition:border-color .2s;
+}
+.form-group input:focus, .form-group textarea:focus { border-color:var(--coral); }
+.form-group textarea { min-height:120px; resize:vertical; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.contact-info { display:flex; flex-direction:column; gap:20px; }
+.info-card { background:var(--black-card); border:1px solid var(--white-05); border-radius:12px; padding:24px; }
+.info-card .info-icon { font-size:20px; margin-bottom:10px; }
+.info-card h4 { font-size:14px; font-weight:700; margin-bottom:6px; }
+.info-card p { font-size:14px; color:var(--white-40); line-height:1.6; }
+.map-placeholder { background:var(--black-card); border:1px solid var(--white-05); border-radius:12px; height:200px; display:flex; align-items:center; justify-content:center; color:var(--white-30); font-size:14px; }
+
+/* ═══════════════════════
+   FOOTER
+   ═══════════════════════ */
+.footer { background:var(--black-light); border-top:1px solid var(--white-05); padding:48px 0; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:32px; }
+.footer-logo { font-size:18px; font-weight:800; margin-bottom:12px; }
+.footer-logo span { color:var(--coral); }
+.footer-desc { font-size:13px; color:var(--white-30); line-height:1.7; }
+.footer h5 { font-size:12px; font-weight:700; color:var(--white-50); margin-bottom:16px; letter-spacing:1px; text-transform:uppercase; }
+.footer a { display:block; font-size:13px; color:var(--white-30); text-decoration:none; margin-bottom:10px; transition:color .2s; }
+.footer a:hover { color:var(--coral); }
+.footer-bottom { border-top:1px solid var(--white-05); padding-top:24px; text-align:center; font-size:12px; color:var(--white-20, rgba(255,255,255,.2)); }
+
+/* ═══════════════════════
+   RESPONSIVE
+   ═══════════════════════ */
+@media (max-width:768px) {
+  .hero h1 { font-size:32px; }
+  .stats-strip { grid-template-columns:repeat(2,1fr); gap:24px; }
+  .about-grid, .biz-cards, .contact-grid { grid-template-columns:1fr; }
+  .biz-card.featured { grid-column:span 1; grid-template-columns:1fr; }
+  .group-cards { grid-template-columns:1fr; }
+  .grid-4 { grid-template-columns:repeat(2,1fr); }
+  .nav { gap:16px; }
+  .nav a { font-size:12px; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .org-branches { flex-direction:column; align-items:center; gap:16px; }
+  .org-line-h { display:none; }
+  .value-cards { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+}
+
+/* Smooth reveal */
+[data-reveal] { opacity:0; transform:translateY(20px); transition:all .6s ease; }
+[data-reveal].visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ── Page Section Nav ── -->
+<div class="page-nav">
+  <div class="page-nav-inner">
+    <a href="#hero" class="active">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#business">SPORTS</a>
+    <a href="#it">IT</a>
+    <a href="#group">GROUP</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════ -->
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">EUM <span>NETWORKS</span></div>
+    <nav class="nav">
+      <a href="#about">ABOUT</a>
+      <a href="#business">SPORTS</a>
+      <a href="#it">IT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-badge">SINCE 2024</div>
+    <h1>현장에서 시스템까지,<br>이음이 만든다</h1>
+    <p>유소년 야구의 꿈을 키우고, 그룹의 IT 인프라를 잇는다 — 이음네트웍스글로벌</p>
+    <div style="display:flex; gap:12px;">
+      <a href="#business" class="btn-coral">사업영역 보기 &rarr;</a>
+      <a href="#contact" class="btn-outline">문의하기</a>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">사업 영역</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">45<span class="accent">+</span></div>
+        <div class="stat-label">아카데미 회원</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">15<span class="accent">+</span></div>
+        <div class="stat-label">금융 IT 인력</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100<span class="accent">%</span></div>
+        <div class="stat-label">그룹사 협력</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">ABOUT US</div>
+        <div class="section-title">연결이 만드는<br>새로운 가치</div>
+        <p class="section-desc">
+          이음네트웍스글로벌은 스포츠 현장과 IT 시스템을 잇는 종합 비즈니스 그룹입니다.
+          브라더스포츠아카데미의 운영 노하우와 이음시스템즈의 금융 IT 역량을 결합하여,
+          현장에서 시스템까지 하나로 연결합니다.
+        </p>
+
+        <div class="value-cards">
+          <div class="value-card">
+            <div class="v-icon">&#9878;</div>
+            <h4>스포츠 전문성</h4>
+            <p>야구 아카데미 운영 및 유소년 선수 육성</p>
+          </div>
+          <div class="value-card">
+            <div class="v-icon">&#128187;</div>
+            <h4>IT 인프라</h4>
+            <p>금융 시스템 개발 및 운영 인력 관리</p>
+          </div>
+          <div class="value-card">
+            <div class="v-icon">&#128230;</div>
+            <h4>용품 유통</h4>
+            <p>해외 야구 장비 직수입 및 판매</p>
+          </div>
+          <div class="value-card">
+            <div class="v-icon">&#129309;</div>
+            <h4>그룹 시너지</h4>
+            <p>계열사 간 협력으로 통합 가치 창출</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="big-quote">&ldquo;</div>
+        <div class="quote-text">현장을 알아야<br>시스템을 만들 수 있다</div>
+        <div class="quote-author">— 이음네트웍스글로벌</div>
+
+        <div class="timeline" style="text-align:left; margin-top:32px;">
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-text">이음네트웍스글로벌 설립</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-text">브라더스포츠아카데미 운영 개시</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-text">브라더유소년야구단 창단</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-text">이음시스템즈 금융 IT 인력관리 사업 연계</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     BUSINESS — SPORTS
+     ═══════════════════════════════════════ -->
+<section class="section" id="business">
+  <div class="container">
+    <div class="section-label">SPORTS BUSINESS</div>
+    <div class="section-title">스포츠 사업</div>
+    <p class="section-desc">야구 현장의 전문성을 바탕으로, 선수 육성부터 장비 유통까지 통합 스포츠 비즈니스를 운영합니다.</p>
+
+    <div class="biz-cards">
+      <!-- Featured: Academy -->
+      <div class="biz-card featured">
+        <div>
+          <div class="biz-icon">&#9878;</div>
+          <div class="biz-sub">핵심 사업</div>
+          <h3>브라더스포츠아카데미</h3>
+          <p>전문 야구 트레이닝 아카데미. 투수, 야수, 재활, 트레이닝 등 체계적인 프로그램을 운영하며,
+          최신 시설과 전문 코칭 스태프를 갖추고 있습니다.</p>
+          <div class="biz-tags">
+            <span class="biz-tag">투수 트레이닝</span>
+            <span class="biz-tag">야수 트레이닝</span>
+            <span class="biz-tag">재활 프로그램</span>
+            <span class="biz-tag">체력 트레이닝</span>
+          </div>
+        </div>
+        <div class="biz-visual">&#9918;</div>
+      </div>
+
+      <!-- Youth -->
+      <div class="biz-card">
+        <div class="biz-num">02</div>
+        <div class="biz-icon">&#9917;</div>
+        <div class="biz-sub">선수 육성</div>
+        <h3>브라더유소년야구단</h3>
+        <p>차세대 야구 인재를 체계적으로 육성합니다. 전국 규모 대회 참가 및 진로 지도.</p>
+        <div class="biz-tags">
+          <span class="biz-tag">유소년 육성</span>
+          <span class="biz-tag">전국 대회</span>
+          <span class="biz-tag">진로 지도</span>
+        </div>
+      </div>
+
+      <!-- Equipment -->
+      <div class="biz-card">
+        <div class="biz-num">03</div>
+        <div class="biz-icon">&#128722;</div>
+        <div class="biz-sub">유통</div>
+        <h3>야구 용품 수입·판매</h3>
+        <p>해외 프리미엄 야구 장비 직수입 및 국내 유통. 합리적 가격의 전문 장비를 공급합니다.</p>
+        <div class="biz-tags">
+          <span class="biz-tag">직수입</span>
+          <span class="biz-tag">프리미엄 장비</span>
+          <span class="biz-tag">국내 유통</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     BUSINESS — IT
+     ═══════════════════════════════════════ -->
+<section class="section" id="it" style="background:var(--black-light);">
+  <div class="container">
+    <div class="section-label">IT BUSINESS</div>
+    <div class="section-title">시스템·IT 사업</div>
+    <p class="section-desc">이음시스템즈 그룹 계열사로서, 금융 IT 시스템의 안정적 운영과 전문 인력 관리를 담당합니다.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px;">
+      <div class="biz-card">
+        <div class="biz-icon">&#128187;</div>
+        <div class="biz-sub">시스템 운영</div>
+        <h3>시스템 유지보수</h3>
+        <p>금융 IT 시스템의 안정적 운영을 위한 유지보수 서비스. 24/7 모니터링 및 장애 대응 체계를 갖추고 있습니다.</p>
+        <div class="biz-tags">
+          <span class="biz-tag">금융 시스템</span>
+          <span class="biz-tag">유지보수</span>
+          <span class="biz-tag">모니터링</span>
+        </div>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon">&#128101;</div>
+        <div class="biz-sub">인력 관리</div>
+        <h3>금융 IT 개발·운영인력</h3>
+        <p>이음시스템즈의 금융 IT 전문 인력 파견 및 관리. 검증된 엔지니어를 프로젝트에 투입합니다.</p>
+        <div class="biz-tags">
+          <span class="biz-tag">인력 파견</span>
+          <span class="biz-tag">프로젝트 관리</span>
+          <span class="biz-tag">전문 인력</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     GROUP
+     ═══════════════════════════════════════ -->
+<section class="section" id="group">
+  <div class="container">
+    <div class="section-label">GROUP</div>
+    <div class="section-title">계열사</div>
+    <p class="section-desc">이음 그룹은 스포츠와 IT, 유통을 아우르는 종합 비즈니스 생태계를 구축하고 있습니다.</p>
+
+    <!-- Org diagram -->
+    <div class="org-diagram">
+      <div class="org-center">
+        이음네트웍스글로벌
+        <small>Eum Networks Global · 지주</small>
+      </div>
+      <div class="org-line"><div class="org-line-h"></div></div>
+      <div class="org-branches">
+        <div class="org-branch">
+          이음시스템즈
+          <small>금융 IT</small>
+        </div>
+        <div class="org-branch">
+          브라더스포츠아카데미
+          <small>야구 트레이닝</small>
+        </div>
+        <div class="org-branch">
+          브라더유소년야구단
+          <small>선수 육성</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="group-cards">
+      <div class="group-card">
+        <div class="g-logo">이음<br>시스템즈</div>
+        <h3>이음시스템즈</h3>
+        <div class="g-en">Eum Systems</div>
+        <p>금융 IT 개발 및 운영인력 전문 기업. 안정적인 시스템 운영과 검증된 인력 공급.</p>
+        <a href="https://eumsystems.com" class="g-link" target="_blank">eumsystems.com &rarr;</a>
+      </div>
+      <div class="group-card">
+        <div class="g-logo">브라더<br>스포츠</div>
+        <h3>브라더스포츠아카데미</h3>
+        <div class="g-en">Brother Sports Academy</div>
+        <p>전문 야구 트레이닝 아카데미. 투수, 야수, 재활, 트레이닝 프로그램 운영.</p>
+        <a href="https://brothersports.co.kr" class="g-link" target="_blank">brothersports.co.kr &rarr;</a>
+      </div>
+      <div class="group-card">
+        <div class="g-logo">유소년<br>야구단</div>
+        <h3>브라더유소년야구단</h3>
+        <div class="g-en">Brother Youth Baseball</div>
+        <p>차세대 야구 인재를 체계적으로 육성하는 유소년 야구단.</p>
+        <a href="#" class="g-link">자세히 보기 &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════ -->
+<section class="section" id="contact" style="background:var(--black-light);">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <div class="section-title">문의하기</div>
+    <p class="section-desc">사업 제휴, 입단 문의, 기타 문의사항을 남겨주시면 빠르게 답변드리겠습니다.</p>
+
+    <div class="contact-grid">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('문의가 접수되었습니다.');">
+        <div class="form-row">
+          <div class="form-group">
+            <label>이름</label>
+            <input type="text" placeholder="홍길동">
+          </div>
+          <div class="form-group">
+            <label>연락처</label>
+            <input type="tel" placeholder="010-0000-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>이메일</label>
+          <input type="email" placeholder="example@email.com">
+        </div>
+        <div class="form-group">
+          <label>문의 유형</label>
+          <select>
+            <option>사업 제휴</option>
+            <option>아카데미 입회</option>
+            <option>유소년야구단 입단</option>
+            <option>야구 용품</option>
+            <option>IT 인력 파견</option>
+            <option>기타</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>문의 내용</label>
+          <textarea placeholder="문의 내용을 입력해주세요."></textarea>
+        </div>
+        <button type="submit" class="btn-coral" style="align-self:flex-start;">문의 접수 &rarr;</button>
+      </form>
+
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">&#128205;</div>
+          <h4>주소</h4>
+          <p>서울특별시 (상세 주소)</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#128222;</div>
+          <h4>전화</h4>
+          <p>02-0000-0000</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#9993;</div>
+          <h4>이메일</h4>
+          <p>info@eumnetworksglobal.com</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#128338;</div>
+          <h4>업무 시간</h4>
+          <p>평일 09:00 ~ 18:00</p>
+        </div>
+        <div class="map-placeholder">
+          &#128506; 카카오맵 (구현 시 삽입)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">EUM <span>NETWORKS</span></div>
+        <p class="footer-desc">
+          이음네트웍스글로벌<br>
+          스포츠와 IT의 경계를 넘어<br>
+          새로운 비즈니스 가치를 창출합니다.
+        </p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#about">회사소개</a>
+        <a href="#business">스포츠 사업</a>
+        <a href="#it">IT 사업</a>
+        <a href="#group">계열사</a>
+      </div>
+      <div>
+        <h5>Group</h5>
+        <a href="https://eumsystems.com" target="_blank">이음시스템즈</a>
+        <a href="https://brothersports.co.kr" target="_blank">브라더스포츠</a>
+        <a href="#">유소년야구단</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:020000000">02-0000-0000</a>
+        <a href="mailto:info@eumnetworksglobal.com">info@eumnetworksglobal.com</a>
+        <a href="#contact">문의하기</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 이음네트웍스글로벌 (Eum Networks Global). All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+});
+
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.page-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
