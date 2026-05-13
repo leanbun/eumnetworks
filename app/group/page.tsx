@@ -17,16 +17,16 @@ export default function GroupPage() {
           <SectionHeader
             label="GROUP STRUCTURE"
             title="그룹 구조"
-            desc="이음 그룹은 스포츠와 IT, 유통을 아우르는 종합 비즈니스 생태계를 구축하고 있습니다."
+            desc="이음시스템즈 그룹은 스포츠와 IT, 유통을 아우르는 종합 비즈니스 생태계를 구축하고 있습니다."
             center
           />
 
           {/* Org diagram */}
           <div className="mt-16 flex flex-col items-center">
             <div className="inline-flex flex-col items-center px-11 py-5 bg-coral rounded-xl font-bold text-base">
-              이음네트웍스글로벌
+              이음시스템즈
               <span className="text-[11px] opacity-80 font-medium">
-                Eum Networks Global · 지주
+                Eum Systems · 지주
               </span>
             </div>
 

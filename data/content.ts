@@ -127,12 +127,12 @@ export interface Subsidiary {
 
 export const SUBSIDIARIES: Subsidiary[] = [
   {
-    name: "이음시스템즈",
-    nameEn: "Eum Systems",
-    role: "금융 IT",
-    desc: "금융 IT 개발 및 운영인력 전문 기업. 안정적 시스템 운영과 검증된 인력 공급.",
-    url: "https://eumsystems.com",
-    logoText: "이음\n시스템즈",
+    name: "이음네트웍스글로벌",
+    nameEn: "Eum Networks Global",
+    role: "스포츠·유통",
+    desc: "스포츠 현장과 글로벌 유통을 잇는 종합 비즈니스 기업. 아카데미 운영과 장비 유통.",
+    url: "https://eumnetworksglobal.com",
+    logoText: "이음\n네트웍스",
   },
   {
     name: "브라더스포츠아카데미",

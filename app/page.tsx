@@ -144,7 +144,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <SectionHeader
             label="GROUP"
-            title="이음 그룹"
+            title="이음시스템즈 그룹"
             desc="하나의 비전으로 연결된 파트너사"
             theme="light"
             center
