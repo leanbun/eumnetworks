@@ -24,9 +24,9 @@ export default function GroupPage() {
           {/* Org diagram */}
           <div className="mt-16 flex flex-col items-center">
             <div className="inline-flex flex-col items-center px-11 py-5 bg-coral rounded-xl font-bold text-base">
-              이음네트웍스글로벌
+              이음시스템즈
               <span className="text-[11px] opacity-80 font-medium">
-                Eum Networks Global
+                Eum Systems · 지주
               </span>
             </div>
 
