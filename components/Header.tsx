@@ -3,31 +3,33 @@
 import Link from "next/link";
 import { useState } from "react";
 import { NAV_ITEMS } from "@/data/content";
+import Logo from "./Logo";
+import NavText from "./NavText";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-navy/88 backdrop-blur-2xl border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[60px]">
-        <Link href="/" className="text-xl font-extrabold tracking-tight">
-          EUM <span className="text-coral">NETWORKS</span>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-navy/88 backdrop-blur-xl border-b border-white/10">
+      <div className="max-w-[1400px] mx-auto px-8 flex items-center h-[70px]">
+        <Link href="/" className="shrink-0">
+          <Logo height={32} />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center justify-end flex-1 gap-12">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-white/50 hover:text-white transition-colors"
+              className="text-white/60 hover:text-white transition-colors duration-300"
             >
-              {item.label}
+              <NavText label={item.label} />
             </Link>
           ))}
         </nav>
 
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden ml-auto flex flex-col gap-1.5 p-2"
           onClick={() => setOpen(!open)}
           aria-label="메뉴"
         >
@@ -44,12 +46,12 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="md:hidden bg-navy/95 backdrop-blur-2xl border-t border-white/5">
+        <nav className="md:hidden bg-navy/95 backdrop-blur-xl border-t border-white/10">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block px-6 py-4 text-sm text-white/60 hover:text-coral hover:bg-white/5 transition-colors"
+              className="block px-8 py-4 text-[15px] text-white/60 hover:text-white hover:bg-white/5 transition-colors"
               onClick={() => setOpen(false)}
             >
               {item.label}

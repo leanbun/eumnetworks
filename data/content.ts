@@ -1,27 +1,28 @@
 export const COMPANY = {
   name: "이음네트웍스글로벌",
   nameEn: "Eum Networks Global",
-  since: 2024,
+  since: 2014,
   slogan: "현장에서 시스템까지, 이음이 만든다",
   description:
     "유소년 야구의 꿈을 키우고, 그룹의 IT 인프라를 잇는다 — 이음네트웍스글로벌",
   aboutText:
     "이음네트웍스글로벌은 스포츠 현장과 IT 시스템을 잇는 종합 비즈니스 그룹입니다. 브라더스포츠아카데미의 운영 노하우와 이음시스템즈의 금융 IT 역량을 결합하여, 현장에서 시스템까지 하나로 연결합니다.",
   quote: "현장을 알아야 시스템을 만들 수 있다",
-  address: "서울특별시",
-  tel: "02-0000-0000",
+  address: "서울특별시 금천구 가산디지털1로 205, 케이씨씨 웰츠밸리 604호",
+  tel: "02-6925-7371",
+  fax: "02-6455-5756",
   email: "info@eumnetworksglobal.com",
 };
 
 export const HERO_STATS = [
-  { value: "2", label: "사업 영역" },
-  { value: "45", suffix: "+", label: "아카데미 회원" },
-  { value: "15", suffix: "+", label: "금융 IT 인력" },
+  { value: "5", suffix: "+", label: "사업 영역" },
+  { value: "200", suffix: "+", label: "아카데미 회원" },
+  { value: "60", suffix: "+", label: "금융 IT 인력" },
   { value: "100", suffix: "%", label: "그룹사 협력" },
 ];
 
 export const BANNER_STATS = [
-  { value: "2024", label: "설립연도" },
+  { value: "2014", label: "설립연도" },
   { value: "3", label: "계열사" },
   { value: "60", suffix: "+", label: "전체 인력" },
   { value: "100", suffix: "%", label: "그룹 시너지" },
@@ -138,7 +139,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     nameEn: "Brother Sports Academy",
     role: "야구 트레이닝",
     desc: "전문 야구 트레이닝 아카데미. 투수, 야수, 재활, 트레이닝 프로그램 운영.",
-    url: "https://brothersports.co.kr",
+    url: "https://brothersportsacademy.com",
     logoText: "브라더\n스포츠",
   },
   {
@@ -146,13 +147,14 @@ export const SUBSIDIARIES: Subsidiary[] = [
     nameEn: "Brother Youth Baseball",
     role: "선수 육성",
     desc: "차세대 야구 인재를 체계적으로 육성하는 유소년 야구단.",
+    url: "https://brothersportsacademy.com/youth",
     logoText: "유소년\n야구단",
   },
 ];
 
 export const NAV_ITEMS = [
-  { label: "ABOUT", href: "/about" },
-  { label: "SPORTS", href: "/business#sports" },
-  { label: "IT", href: "/business#it" },
-  { label: "GROUP", href: "/group" },
+  { label: "Company", href: "/about" },
+  { label: "Sports", href: "/business#sports" },
+  { label: "IT System", href: "/business#it" },
+  { label: "Group", href: "/group" },
 ];

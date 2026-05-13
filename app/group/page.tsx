@@ -22,7 +22,7 @@ export default function GroupPage() {
           />
 
           {/* Org diagram */}
-          <div className="mt-16">
+          <div className="mt-16 flex flex-col items-center">
             <div className="inline-flex flex-col items-center px-11 py-5 bg-coral rounded-xl font-bold text-base">
               이음네트웍스글로벌
               <span className="text-[11px] opacity-80 font-medium">
@@ -30,13 +30,41 @@ export default function GroupPage() {
               </span>
             </div>
 
-            <div className="w-px h-8 bg-white/15 mx-auto" />
-            <div className="w-[400px] max-w-full h-px bg-white/15 mx-auto" />
+            {/* 세로선: 지주 → 분기점 */}
+            <div className="w-px h-8 bg-white/15" />
 
-            <div className="flex justify-center gap-12 max-md:flex-col max-md:items-center max-md:gap-4 mt-0">
+            {/* 가로선 + 세로선 + 카드 (grid로 정렬) */}
+            <div className="hidden md:grid grid-cols-3 w-full max-w-[640px]">
+              {/* 가로선: 첫번째 중앙 ~ 마지막 중앙 */}
+              <div className="col-span-3 flex">
+                <div className="w-1/6" />
+                <div className="flex-1 h-px bg-white/15" />
+                <div className="w-1/6" />
+              </div>
+              {/* 세로선 3개 */}
               {SUBSIDIARIES.map((s) => (
-                <div key={s.nameEn} className="relative">
-                  <div className="w-px h-4 bg-white/15 mx-auto max-md:hidden" />
+                <div key={s.nameEn} className="flex justify-center">
+                  <div className="w-px h-6 bg-white/15" />
+                </div>
+              ))}
+              {/* 카드 3개 */}
+              {SUBSIDIARIES.map((s) => (
+                <div key={s.nameEn} className="flex justify-center px-2">
+                  <div className="flex flex-col items-center px-7 py-4 border border-white/12 rounded-xl text-sm font-semibold w-full">
+                    {s.name}
+                    <span className="text-[11px] text-white/35 font-normal mt-0.5">
+                      {s.role}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* 모바일: 세로 리스트 */}
+            <div className="md:hidden flex flex-col items-center gap-3">
+              {SUBSIDIARIES.map((s, i) => (
+                <div key={s.nameEn} className="flex flex-col items-center">
+                  <div className="w-px h-4 bg-white/15" />
                   <div className="flex flex-col items-center px-7 py-4 border border-white/12 rounded-xl text-sm font-semibold">
                     {s.name}
                     <span className="text-[11px] text-white/35 font-normal mt-0.5">

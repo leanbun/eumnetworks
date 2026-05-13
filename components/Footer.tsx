@@ -1,69 +1,42 @@
 import Link from "next/link";
-import { COMPANY, NAV_ITEMS, SUBSIDIARIES } from "@/data/content";
+import { COMPANY, NAV_ITEMS } from "@/data/content";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy border-t border-white/5 pt-12 pb-8">
+    <footer className="bg-navy border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <div className="text-lg font-extrabold mb-3">
-              EUM <span className="text-coral">NETWORKS</span>
-            </div>
-            <p className="text-sm text-white/30 leading-relaxed">
-              {COMPANY.name}
-              <br />
-              스포츠와 IT의 경계를 넘어
-              <br />
-              새로운 비즈니스 가치를 창출합니다.
-            </p>
-          </div>
-
-          <div>
-            <h5 className="text-[11px] font-bold text-white/40 tracking-[1.5px] uppercase mb-4">
-              Company
-            </h5>
+        {/* 상단: 로고 + 네비게이션 */}
+        <div className="flex items-center justify-between py-5">
+          <Link href="/">
+            <Logo height={26} />
+          </Link>
+          <nav className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-sm text-white/30 hover:text-coral transition-colors mb-2.5"
+                className="text-sm text-white/40 hover:text-white transition-colors"
               >
                 {item.label}
               </Link>
             ))}
-          </div>
-
-          <div>
-            <h5 className="text-[11px] font-bold text-white/40 tracking-[1.5px] uppercase mb-4">
-              Group
-            </h5>
-            {SUBSIDIARIES.map((s) => (
-              <a
-                key={s.nameEn}
-                href={s.url || "#"}
-                target={s.url ? "_blank" : undefined}
-                rel={s.url ? "noopener noreferrer" : undefined}
-                className="block text-sm text-white/30 hover:text-coral transition-colors mb-2.5"
-              >
-                {s.name}
-              </a>
-            ))}
-          </div>
-
-          <div>
-            <h5 className="text-[11px] font-bold text-white/40 tracking-[1.5px] uppercase mb-4">
-              Info
-            </h5>
-            <p className="text-sm text-white/30 mb-2.5">{COMPANY.address}</p>
-            <p className="text-sm text-white/30 mb-2.5">{COMPANY.tel}</p>
-            <p className="text-sm text-white/30">{COMPANY.email}</p>
-          </div>
+          </nav>
         </div>
 
-        <div className="border-t border-white/5 pt-6 text-center text-xs text-white/20">
-          &copy; {new Date().getFullYear()} {COMPANY.name} ({COMPANY.nameEn}).
-          All rights reserved.
+        {/* 하단: 회사 정보 + 카피라이트 */}
+        <div className="border-t border-white/10 py-5 text-[13px] text-white/35 leading-relaxed">
+          <p>
+            Add. {COMPANY.address}
+          </p>
+          <p className="mt-1">
+            E-mail. {COMPANY.email}
+            <span className="mx-4">Tel. {COMPANY.tel}</span>
+            <span>Fax. {COMPANY.fax}</span>
+            <span className="mx-4">
+              Copyright &copy; {COMPANY.nameEn.toUpperCase()}. ALL rights reserved.
+            </span>
+          </p>
         </div>
       </div>
     </footer>
