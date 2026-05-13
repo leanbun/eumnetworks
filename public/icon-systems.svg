@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Building / HQ -->
+  <rect x="24" y="22" width="32" height="40" rx="2" stroke="#E8563A" stroke-width="2"/>
+  <rect x="30" y="28" width="6" height="6" rx="1" stroke="#E8563A" stroke-width="1.5"/>
+  <rect x="44" y="28" width="6" height="6" rx="1" stroke="#E8563A" stroke-width="1.5"/>
+  <rect x="30" y="40" width="6" height="6" rx="1" stroke="#E8563A" stroke-width="1.5"/>
+  <rect x="44" y="40" width="6" height="6" rx="1" stroke="#E8563A" stroke-width="1.5"/>
+  <!-- Door -->
+  <rect x="36" y="50" width="8" height="12" rx="1" fill="#E8563A" opacity="0.3"/>
+  <!-- Flag -->
+  <line x1="40" y1="14" x2="40" y2="22" stroke="#E8563A" stroke-width="1.5"/>
+  <path d="M40 14 L50 17 L40 20" fill="#E8563A" opacity="0.6"/>
+</svg>

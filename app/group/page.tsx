@@ -23,10 +23,10 @@ export default function GroupPage() {
 
           {/* Org diagram */}
           <div className="mt-16 flex flex-col items-center">
-            <div className="inline-flex flex-col items-center px-11 py-5 border border-white/12 rounded-xl font-bold text-base">
-              이음시스템즈
-              <span className="text-[11px] text-white/35 font-medium">
-                Eum Systems · 지주
+            <div className="inline-flex flex-col items-center px-11 py-5 bg-coral rounded-xl font-bold text-base">
+              이음네트웍스글로벌
+              <span className="text-[11px] opacity-80 font-medium">
+                Eum Networks Global
               </span>
             </div>
 
@@ -50,15 +50,9 @@ export default function GroupPage() {
               {/* 카드 3개 */}
               {SUBSIDIARIES.map((s) => (
                 <div key={s.nameEn} className="flex justify-center px-2">
-                  <div className={`flex flex-col items-center px-7 py-4 rounded-xl text-sm font-semibold w-full ${
-                    s.nameEn === "Eum Networks Global"
-                      ? "bg-coral"
-                      : "border border-white/12"
-                  }`}>
+                  <div className="flex flex-col items-center px-7 py-4 border border-white/12 rounded-xl text-sm font-semibold w-full">
                     {s.name}
-                    <span className={`text-[11px] font-normal mt-0.5 ${
-                      s.nameEn === "Eum Networks Global" ? "opacity-80" : "text-white/35"
-                    }`}>
+                    <span className="text-[11px] text-white/35 font-normal mt-0.5">
                       {s.role}
                     </span>
                   </div>
@@ -71,15 +65,9 @@ export default function GroupPage() {
               {SUBSIDIARIES.map((s, i) => (
                 <div key={s.nameEn} className="flex flex-col items-center">
                   <div className="w-px h-4 bg-white/15" />
-                  <div className={`flex flex-col items-center px-7 py-4 rounded-xl text-sm font-semibold ${
-                    s.nameEn === "Eum Networks Global"
-                      ? "bg-coral"
-                      : "border border-white/12"
-                  }`}>
+                  <div className="flex flex-col items-center px-7 py-4 border border-white/12 rounded-xl text-sm font-semibold">
                     {s.name}
-                    <span className={`text-[11px] font-normal mt-0.5 ${
-                      s.nameEn === "Eum Networks Global" ? "opacity-80" : "text-white/35"
-                    }`}>
+                    <span className="text-[11px] text-white/35 font-normal mt-0.5">
                       {s.role}
                     </span>
                   </div>
