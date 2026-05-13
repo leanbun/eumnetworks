@@ -13,7 +13,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy/88 backdrop-blur-xl border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-8 flex items-center h-[70px]">
         <Link href="/" className="shrink-0">
-          <Logo height={42} />
+          <Logo height={52} />
         </Link>
 
         <nav className="hidden md:flex items-center justify-end flex-1 gap-12">

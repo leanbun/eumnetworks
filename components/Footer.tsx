@@ -10,7 +10,7 @@ export default function Footer() {
         {/* 상단: 로고 + 네비게이션 */}
         <div className="flex items-center justify-between py-5">
           <Link href="/">
-            <Logo height={36} />
+            <Logo height={44} />
           </Link>
           <nav className="hidden md:flex items-center gap-12">
             {NAV_ITEMS.map((item) => (
