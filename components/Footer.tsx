@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { COMPANY, NAV_ITEMS } from "@/data/content";
 import Logo from "./Logo";
+import NavText from "./NavText";
 
 export default function Footer() {
   return (
@@ -9,16 +10,16 @@ export default function Footer() {
         {/* 상단: 로고 + 네비게이션 */}
         <div className="flex items-center justify-between py-5">
           <Link href="/">
-            <Logo height={26} />
+            <Logo height={36} />
           </Link>
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-12">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-white/40 hover:text-white transition-colors"
+                className="text-white/40 hover:text-white transition-colors duration-300"
               >
-                {item.label}
+                <NavText label={item.label} />
               </Link>
             ))}
           </nav>
