@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { COMPANY, VALUES, TIMELINE } from "@/data/content";
+import { COMPANY, VALUES } from "@/data/content";
 import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
@@ -67,31 +67,6 @@ export default function AboutPage() {
                 <p className="text-sm text-gray-500 leading-relaxed">
                   {v.desc}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── [DARK ALT] 연혁 ── */}
-      <section className="py-24 bg-navy-light">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <SectionHeader
-            label="HISTORY"
-            title="연혁"
-            desc="이음네트웍스글로벌의 발자취"
-            center
-          />
-          <div className="max-w-[700px] mx-auto mt-12">
-            {TIMELINE.map((item, i) => (
-              <div
-                key={i}
-                className="flex gap-6 py-5 border-b border-white/6 text-left"
-              >
-                <span className="text-[15px] font-bold text-coral min-w-[60px]">
-                  {item.year}
-                </span>
-                <span className="text-[15px] text-white/55">{item.text}</span>
               </div>
             ))}
           </div>
