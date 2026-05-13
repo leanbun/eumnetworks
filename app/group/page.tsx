@@ -92,8 +92,12 @@ export default function GroupPage() {
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             {SUBSIDIARIES.map((s) => (
               <div key={s.nameEn} className="card-light p-8 text-center">
-                <div className="w-20 h-20 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center mx-auto mb-5 text-xs font-bold text-gray-500 leading-tight whitespace-pre-line">
-                  {s.logoText}
+                <div className="w-20 h-20 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center mx-auto mb-5">
+                  {s.icon ? (
+                    <img src={s.icon} alt={s.name} className="w-12 h-12" />
+                  ) : (
+                    <span className="text-xs font-bold text-gray-500 leading-tight whitespace-pre-line">{s.logoText}</span>
+                  )}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">{s.name}</h3>
                 <p className="text-xs text-gray-500 mt-0.5 mb-3">

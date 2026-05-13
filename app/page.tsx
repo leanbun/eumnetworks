@@ -152,8 +152,12 @@ export default function Home() {
           <div className="flex justify-center gap-12 max-md:gap-8 flex-wrap mt-12">
             {SUBSIDIARIES.map((s) => (
               <div key={s.nameEn} className="text-center">
-                <div className="w-24 h-24 rounded-2xl bg-white border border-gray-200 flex items-center justify-center mx-auto mb-3 text-xs font-bold text-gray-500 leading-tight whitespace-pre-line">
-                  {s.logoText}
+                <div className="w-24 h-24 rounded-2xl bg-white border border-gray-200 flex items-center justify-center mx-auto mb-3">
+                  {s.icon ? (
+                    <img src={s.icon} alt={s.name} className="w-14 h-14" />
+                  ) : (
+                    <span className="text-xs font-bold text-gray-500 leading-tight whitespace-pre-line">{s.logoText}</span>
+                  )}
                 </div>
                 <div className="text-sm font-semibold text-gray-900">
                   {s.name}

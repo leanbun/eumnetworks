@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <circle cx="40" cy="40" r="22" stroke="#E8563A" stroke-width="2" opacity="0.3"/>
+  <circle cx="40" cy="40" r="14" stroke="#E8563A" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="40" cy="18" r="4" fill="#E8563A"/>
+  <circle cx="59" cy="30" r="4" fill="#E8563A"/>
+  <circle cx="59" cy="50" r="4" fill="#E8563A"/>
+  <circle cx="40" cy="62" r="4" fill="#E8563A"/>
+  <circle cx="21" cy="50" r="4" fill="#E8563A"/>
+  <circle cx="21" cy="30" r="4" fill="#E8563A"/>
+  <circle cx="40" cy="40" r="5" fill="#E8563A"/>
+  <line x1="40" y1="22" x2="40" y2="35" stroke="#E8563A" stroke-width="1.2" opacity="0.4"/>
+  <line x1="55.5" y1="32" x2="44.5" y2="38" stroke="#E8563A" stroke-width="1.2" opacity="0.4"/>
+  <line x1="55.5" y1="48" x2="44.5" y2="42" stroke="#E8563A" stroke-width="1.2" opacity="0.4"/>
+  <line x1="40" y1="58" x2="40" y2="45" stroke="#E8563A" stroke-width="1.2" opacity="0.4"/>
+  <line x1="24.5" y1="48" x2="35.5" y2="42" stroke="#E8563A" stroke-width="1.2" opacity="0.4"/>
+  <line x1="24.5" y1="32" x2="35.5" y2="38" stroke="#E8563A" stroke-width="1.2" opacity="0.4"/>
+</svg>

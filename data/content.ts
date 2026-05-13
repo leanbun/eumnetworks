@@ -123,6 +123,7 @@ export interface Subsidiary {
   desc: string;
   url?: string;
   logoText: string;
+  icon?: string;
 }
 
 export const SUBSIDIARIES: Subsidiary[] = [
@@ -133,6 +134,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     desc: "스포츠 현장과 글로벌 유통을 잇는 종합 비즈니스 기업. 아카데미 운영과 장비 유통.",
     url: "https://eumnetworksglobal.com",
     logoText: "이음\n네트웍스",
+    icon: "/icon-networks.svg",
   },
   {
     name: "브라더스포츠아카데미",
@@ -141,6 +143,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     desc: "전문 야구 트레이닝 아카데미. 투수, 야수, 재활, 트레이닝 프로그램 운영.",
     url: "https://brothersportsacademy.com",
     logoText: "브라더\n스포츠",
+    icon: "/icon-baseball.svg",
   },
   {
     name: "브라더유소년야구단",
@@ -149,6 +152,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     desc: "차세대 야구 인재를 체계적으로 육성하는 유소년 야구단.",
     url: "https://brothersportsacademy.com/youth",
     logoText: "유소년\n야구단",
+    icon: "/icon-youth.svg",
   },
 ];
 
