@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://www.eumnetworksglobal.com/sitemap.xml
+Sitemap: https://eumnetworksglobal.com/sitemap.xml
