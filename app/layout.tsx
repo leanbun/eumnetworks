@@ -29,6 +29,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
+        <meta name="naver-site-verification" content="bb9d8d2aa663fdaf6a0827a3a3841a8beea6b1ce" />
         <link
           rel="stylesheet"
           as="style"
